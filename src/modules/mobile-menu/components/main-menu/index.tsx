@@ -72,6 +72,18 @@ const MainMenu = () => {
                 </button>
               </Link>
             </li>
+            <li className="bg-gray-50 p-4">
+              <Link href="/store">
+                <button
+                  className="flex items-center justify-between w-full"
+                  onClick={close}
+                >
+                  <span className="sr-only">Go to Store</span>
+                  <span>Store</span>
+                  <ChevronDown className="-rotate-90" />
+                </button>
+              </Link>
+            </li>
             {collections ? (
               <>
                 {collections.map((collection) => (
@@ -89,9 +101,11 @@ const MainMenu = () => {
                       </button>
                     </Link>
                   </li>
+                  
                 ))}
               </>
             ) : null}
+            
           </ul>
         </div>
 

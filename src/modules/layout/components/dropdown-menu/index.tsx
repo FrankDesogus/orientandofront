@@ -22,17 +22,18 @@ const DropdownMenu = () => {
 
   return (
     <div
+    
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
-      className="h-full"
+      className=""
     >
-      <div className="flex items-center h-full">
+      <div className="flex items-center  gap-x-12">
         <Popover className="h-full flex">
           <>
             <Link href="/store" className="relative flex h-full" passHref>
               <Popover.Button
                 className={clsx(
-                  "relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none"
+                  "uppercase relative h-full mr-5 flex items-center transition-all ease-out duration-200 focus:outline-none"
                 )}
                 onClick={() => push("/store")}
               >
@@ -112,6 +113,66 @@ const DropdownMenu = () => {
             </Transition>
           </>
         </Popover>
+        <Link href="/store" className="relative flex h-full" passHref>
+          <div
+            className={clsx(
+              "relative h-full mr-5 flex items-center transition-all ease-out duration-200 focus:outline-none"
+            )}
+            onClick={() => push("/store")}
+          >
+            Bambino
+          </div>
+        </Link>
+        <Link href="/store" className="relative flex h-full" passHref>
+          <div
+            className={clsx(
+              "relative h-full mr-5 flex items-center transition-all ease-out duration-200 focus:outline-none"
+            )}
+            onClick={() => push("/store")}
+          >
+            Donna
+          </div>
+        </Link>
+        <Link href="/store" className="relative flex h-full" passHref>
+          <div
+            className={clsx(
+              "relative h-full mr-5 flex items-center transition-all ease-out duration-200 focus:outline-none"
+            )}
+            onClick={() => push("/store")}
+          >
+            Uomo
+          </div>
+        </Link>
+        <Link href="/store" className="relative flex h-full" passHref>
+          <div
+            className={clsx(
+              "relative h-full mr-5 flex items-center transition-all ease-out duration-200 focus:outline-none"
+            )}
+            onClick={() => push("/store")}
+          >
+            Accessori
+          </div>
+        </Link>
+        <Link href="/store" className="relative flex h-full" passHref>
+          <div
+            className={clsx(
+              "relative h-full mr-5 flex items-center transition-all ease-out duration-200 focus:outline-none"
+            )}
+            onClick={() => push("/store")}
+          >
+            Beauty
+          </div>
+        </Link>
+        <Link href="/store" className="relative flex h-full" passHref>
+          <div
+            className={clsx(
+              "relative h-full mr-5 flex items-center transition-all ease-out duration-200 focus:outline-none"
+            )}
+            onClick={() => push("/store")}
+          >
+            Beaty & Co 
+          </div>
+        </Link>
       </div>
     </div>
   )

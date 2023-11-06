@@ -10,6 +10,7 @@ import Thumbnail from "@modules/products/components/thumbnail"
 import { formatAmount, useCart } from "medusa-react"
 import Link from "next/link"
 import { Fragment } from "react"
+import Image from "next/image"
 
 const CartDropdown = () => {
   const { cart, totalItems } = useCart()
@@ -18,10 +19,22 @@ const CartDropdown = () => {
   const { state, open, close } = useCartDropdown()
 
   return (
-    <div className="h-full z-50" onMouseEnter={open} onMouseLeave={close}>
+    <div className="h-1/2 mb-8 z-50" onMouseEnter={open} onMouseLeave={close}>
       <Popover className="relative h-full">
         <Popover.Button className="h-full">
-          <Link href="/cart">{`My Bag (${totalItems})`}</Link>
+          <Link href="/cart"><span>
+               <Image
+                src="/bag.png"
+                width={37}
+                height={37}
+                alt=""
+                className="flex mr-2"
+              
+                sizes="100vw"
+                style={{
+                  objectFit: "cover",
+                }}
+              /></span><span className="mr-2">{`(${totalItems})`}</span></Link>
         </Popover.Button>
         <Transition
           show={state}
