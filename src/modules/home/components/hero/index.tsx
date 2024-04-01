@@ -1,15 +1,19 @@
 import UnderlineLink from "@modules/common/components/underline-link"
 import Image from "next/image"
+import Carousel from "./carousel";
+
 const Hero = () => {
   return (
     <div className="h-[90vh] w-full relative">
+      <Carousel></Carousel>
+      {/*
       <Image
-        src="/hero.webp"
+        src="/Home_Momo.png"
         loading="eager"
         priority={true}
-        quality={90}
+        quality={100}
         alt="Photo by @thevoncomplex https://unsplash.com/@thevoncomplex"
-        className="absolute inset-0 lg:pt-36 lg:px-24"
+        className="absolute inset-0 lg:pt-32"
         draggable="false"
         fill
         sizes="100vw"
@@ -31,6 +35,8 @@ const Hero = () => {
           </div>
           </div>
       </div>
+*/}
+
     </div>
   );
 };

@@ -30,6 +30,7 @@ const DropdownMenu = () => {
       <div className="flex items-center  gap-x-12">
         <Popover className="h-full flex">
           <>
+            <ul><li>
             <Link href="/store" className="relative flex h-full" passHref>
               <Popover.Button
                 className={clsx(
@@ -37,7 +38,95 @@ const DropdownMenu = () => {
                 )}
                 onClick={() => push("/store")}
               >
-                Store
+                negozio
+              </Popover.Button>
+              
+            </Link></li>
+            <li>
+              asd</li></ul>
+
+            <Transition
+              show={open}
+              as={React.Fragment}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Popover.Panel
+                static
+                className="absolute top-full inset-x-0 text-sm text-gray-700 z-30 border-y border-gray-200"
+              >
+                <div className="relative bg-white py-8">
+                  <div className="flex items-start content-container">
+                    <div className="flex flex-col flex-1 max-w-[30%]">
+                      <h3 className="text-base-semi text-gray-900 mb-4">
+                        Collecti
+                      </h3>
+                      <div className="flex items-start">
+                        {collections &&
+                          chunk(collections, 6).map((chunk, index) => {
+                            return (
+                              <ul
+                                key={index}
+                                className="min-w-[152px] max-w-[200px] pr-4"
+                              >
+                                {chunk.map((collection) => {
+                                  return (
+                                    <div
+                                      key={collection.handle}
+                                      className="pb-3"
+                                    >
+                                      <Link
+                                        href={`/collections/${collection.handle}`}
+                                        onClick={() => setOpen(false)}
+                                      >
+                                        {collection.title}
+                                      </Link>
+                                    </div>
+                                  )
+                                })}
+                              </ul>
+                            )
+                          })}
+                        {loadingCollections &&
+                          repeat(6).map((index) => (
+                            <div
+                              key={index}
+                              className="w-12 h-4 bg-gray-100 animate-pulse"
+                            />
+                          ))}
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="grid grid-cols-3 gap-4">
+                        {products?.slice(0, 3).map((product) => (
+                          <ProductPreview {...product} key={product.id} />
+                        ))}
+                        {loadingProducts &&
+                          repeat(3).map((index) => (
+                            <SkeletonProductPreview key={index} />
+                          ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Popover.Panel>
+            </Transition>
+          </>
+        </Popover>
+        <Popover className="h-full flex">
+          <>
+            <Link href="/store" className="relative flex h-full" passHref>
+              <Popover.Button
+                className={clsx(
+                  "uppercase relative h-full mr-5 flex items-center transition-all ease-out duration-200 focus:outline-none"
+                )}
+                onClick={() => push("/store")}
+              >
+                negozio
               </Popover.Button>
             </Link>
 
@@ -59,7 +148,7 @@ const DropdownMenu = () => {
                   <div className="flex items-start content-container">
                     <div className="flex flex-col flex-1 max-w-[30%]">
                       <h3 className="text-base-semi text-gray-900 mb-4">
-                        Collections
+                        Collectisassswwqweq
                       </h3>
                       <div className="flex items-start">
                         {collections &&

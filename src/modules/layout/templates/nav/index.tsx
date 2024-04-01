@@ -11,6 +11,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import Image from "next/image"
+import Ddmenu from "@modules/layout/components/dropdown-menu/ddmenu"
 
 const Nav = () => {
   const pathname = usePathname()
@@ -112,7 +113,7 @@ const Nav = () => {
               </Link>
             </div>
             <div className="row hidden small:block h-full justify pt-6 uppercase ">
-              <DropdownMenu />
+              <Ddmenu />
             </div>
           </div>
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">

@@ -67,8 +67,10 @@ const CategoryTemplate: React.FC<CategoryTemplateProps> = ({ categories }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView, hasNextPage])
-
+  
   return (
+    <>
+  
     <div className="content-container py-6">
       <div className="flex flex-row mb-8 text-2xl-semi gap-4">
         {parents &&
@@ -84,18 +86,30 @@ const CategoryTemplate: React.FC<CategoryTemplateProps> = ({ categories }) => {
             </span>
           ))}
         <h1>{category.name}</h1>
-      </div>
+      </div>{/*
       {category.description && (
-        <div className="mb-8 text-base-regular">
+      <div className="mb-8 text-base-regular">
           <p>{category.description}</p>
         </div>
-      )}
+      )}*/}
+      </div>
       {category.category_children && (
-        <div className="mb-8 text-base-large">
-          <ul className="grid grid-cols-1 gap-2">
+        <div className="mb-2 text-base-large">
+          <ul>
             {category.category_children?.map((c) => (
               <li key={c.id}>
-                <UnderlineLink href={`/${c.handle}`}>{c.name}</UnderlineLink>
+               <label className="flex items-center gap-x-2">
+            {/*<UnderlineLink href={`/${c.handle}`}>{c.name}</UnderlineLink>*/}
+            <input
+                    type="checkbox"
+                    defaultChecked={c.id .includes(
+                      c.id
+                    )}
+                    onChange={(e) =>  (c.id)}
+                    className="accent-amber-200"
+                  />
+                  {c.name}
+                </label>
               </li>
             ))}
           </ul>
@@ -120,8 +134,9 @@ const CategoryTemplate: React.FC<CategoryTemplateProps> = ({ categories }) => {
       >
         <span ref={ref}></span>
       </div>
-    </div>
-  )
+
+    
+    </>)
 }
 
 export default CategoryTemplate
